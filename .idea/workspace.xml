@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f30e5680-ba1d-40c8-8d79-da030429a87d" name="Changes" comment="" />
+    <list default="true" id="f30e5680-ba1d-40c8-8d79-da030429a87d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/bin/dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/cfg/webpack.client.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/cfg/webpack.server.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/src/client/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/src/server/indexTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/src/server/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/src/shared/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/src/shared/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/src/types/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M4/webpack.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,21 +31,25 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: -1
-}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2UMi8iHzzUqUENVeUMHya5b4ZH0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "homework__3",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/anton/WebstormProjects/ReactJS",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,10 +63,14 @@
       <updated>1692755693356</updated>
       <workItem from="1692755695608" duration="34000" />
       <workItem from="1693231770541" duration="151000" />
+      <workItem from="1693372150618" duration="209000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
