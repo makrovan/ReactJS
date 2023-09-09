@@ -8,8 +8,8 @@ import {SaveButton} from "./SaveButton";
 export function Controls() {
   return (
       <div className={styles.controls}>
-        <KarmaCounter />
-        <CommentButton />
+        <KarmaCounter karmaValue={234}/>
+        <CommentButton commentNumber={13}/>
 
         <div className={styles.actions}>
           <ShareButton />

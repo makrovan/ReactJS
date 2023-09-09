@@ -1,20 +1,20 @@
 import React from 'react';
 import styles from './karmacounter.css';
-const KARMA_VALUE = 234;
+import {ReactComponent as TriangleButtonSvg} from '../../../../assets/triangleButton.svg';
 
-export function KarmaCounter() {
+interface IKarmaCounterProps {
+    karmaValue: number;
+}
+
+export function KarmaCounter({karmaValue}: IKarmaCounterProps) {
   return (
       <div className={styles.karmaCounter}>
-        <button className={styles.up}>
-          <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.5 0L0 10H19L9.5 0Z" fill="#D9D9D9"/>
-          </svg>
+        <button>
+            <TriangleButtonSvg />
         </button>
-        <span className={styles.karmaValue}>{KARMA_VALUE}</span>
-        <button className={styles.down}>
-          <svg className={styles.down} width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.5 0L0 10H19L9.5 0Z" fill="#D9D9D9"/>
-          </svg>
+        <span className={styles.karmaValue}>{karmaValue}</span>
+        <button>
+            <TriangleButtonSvg className={styles.down} />
         </button>
       </div>
   );

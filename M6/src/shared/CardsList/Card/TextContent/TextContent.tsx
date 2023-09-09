@@ -2,16 +2,14 @@ import React from 'react';
 import styles from './textcontent.css';
 import {Title} from "./Title";
 
-const PUBLISHED_TIME = 4;
-
 interface ITextContentProps {
-  children?: React.ReactNode,
-  // title?: React.ReactNode,
+  children?: React.ReactNode;
+  publishedTime: number;
 }
 
 //не придумал как передать title в качестве второго дочернего компонента...
 export function TextContent(
-    { children }: ITextContentProps,
+    { children, publishedTime }: ITextContentProps,
     ) {
   return (
       <div className={styles.textContent}>
@@ -19,10 +17,13 @@ export function TextContent(
               { children }
             <span className={styles.createdAt}>
                 <span className={styles.publishedLabel}>опубликовано </span>
-                { PUBLISHED_TIME } часа назад
+                { publishedTime } часа назад
             </span>
           </div>
-          < Title />
+          <Title
+           post={'Следует отметить, что новая модель организационной деятельности поможет'}
+           postUrl={"#post-url"}
+          />
       </div>
   );
 }
