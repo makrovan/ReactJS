@@ -5,11 +5,16 @@ import {CommentButton} from "./CommentButton";
 import {ShareButton} from "./ShareButton";
 import {SaveButton} from "./SaveButton";
 
-export function Controls() {
+interface IControlsProps {
+    commentNumber: number;
+    karmaValue: number;
+}
+
+export function Controls({commentNumber, karmaValue}: IControlsProps) {
   return (
       <div className={styles.controls}>
-        <KarmaCounter karmaValue={234}/>
-        <CommentButton commentNumber={13}/>
+        <KarmaCounter karmaValue={karmaValue}/>
+        <CommentButton commentNumber={commentNumber}/>
 
         <div className={styles.actions}>
           <ShareButton />
