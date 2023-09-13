@@ -7,9 +7,9 @@ import {SortBlock} from "./SortBlock";
 export function Header() {
   return (
       <header className={styles.header}>
-        <SearchBlock />
-        <ThreadTitle />
-        <SortBlock />
+          <SearchBlock/>
+          <ThreadTitle />
+          <SortBlock />
       </header>
   );
 }
