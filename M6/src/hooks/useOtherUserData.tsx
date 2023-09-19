@@ -27,6 +27,5 @@ export function useOtherUserData(username: string) {
             })
             .catch()
     }, [token]);
-
     return [data];
 }

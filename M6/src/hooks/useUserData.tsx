@@ -9,8 +9,6 @@ interface IUserData {
 
 export function useUserData() {
     const token = useContext(tokenContext);
-
-
     const [data, setData] = useState<IUserData>({});
     useEffect(() => {
         axios.get(
@@ -18,7 +16,6 @@ export function useUserData() {
                 headers: {Authorization: `bearer ${token}`}
             })
             .then((resp) => {
-                // console.log(resp);
                 const userData = resp.data;
                 setData({name: userData.name, iconImage: userData.snoovatar_img}); //icon_img
             })

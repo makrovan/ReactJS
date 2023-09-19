@@ -7,11 +7,12 @@ interface ITextContentProps {
   publishedTime?: string;
   title?: string;
   postUrl?: string;
+  postId: string;
 }
 
 //не придумал как передать title в качестве второго дочернего компонента...
 export function TextContent(
-    { children, publishedTime = '', title = '', postUrl = '' }: ITextContentProps) {
+    { children, publishedTime = '', title = '', postUrl = '', postId }: ITextContentProps) {
   return (
       <div className={styles.textContent}>
           <div className={styles.metaData}>
@@ -24,6 +25,7 @@ export function TextContent(
           <Title
            post={title}
            postUrl={postUrl}
+           postId={postId}
           />
       </div>
   );
