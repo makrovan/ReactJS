@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styles from './post.css';
 import ReactDOM from "react-dom";
-import {CommentForm} from "./CommentForm";
+// import {CommentForm} from "./CommentFormContainer/CommentForm";
 import {IPost, usePostComments} from "../../hooks/usePostComments";
 import {CommentList} from "./CommentList";
+import {CommentFormContainer} from "./CommentFormContainer";
 
 interface IPostProps {
   postId: string;
@@ -53,7 +54,7 @@ export function Post(props: IPostProps) {
         <div className={styles.content}>
           <p>{post.title}</p>
         </div>
-        <CommentForm postId={post.id} isCommentHide={false} helloText={''}/>
+        <CommentFormContainer postId={post.id} isCommentHide={false} helloText={''}/>
         <CommentList children={comments} />
       </div>
   ), node);

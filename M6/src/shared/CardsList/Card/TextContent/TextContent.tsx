@@ -10,7 +10,6 @@ interface ITextContentProps {
   postId: string;
 }
 
-//не придумал как передать title в качестве второго дочернего компонента...
 export function TextContent(
     { children, publishedTime = '', title = '', postUrl = '', postId }: ITextContentProps) {
   return (

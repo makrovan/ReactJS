@@ -24,7 +24,7 @@ export interface IPostsData {
 
 export const postsContext = React.createContext<IPostsData>({});
 
-export function PostContextProvider({children} : {children: React.ReactNode}){
+export function PostsContextProvider({children} : {children: React.ReactNode}){
     const [postsData] = usePostsData();
 
     return (
