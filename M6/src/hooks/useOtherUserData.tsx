@@ -1,6 +1,7 @@
-import {useContext, useEffect, useState} from "react";
-import {tokenContext} from "../shared/context/tokenContext";
+import {useEffect, useState} from "react";
 import axios from "axios";
+import {useSelector} from "react-redux";
+import {RootState} from "../store";
 
 
 interface IOtherUserData {
@@ -10,7 +11,7 @@ interface IOtherUserData {
 }
 
 export function useOtherUserData(username: string) {
-    const token = useContext(tokenContext);
+    const token = useSelector<RootState, string>(state => state.token);
 
     const [data, setData] = useState<IOtherUserData>({});
     useEffect(() => {

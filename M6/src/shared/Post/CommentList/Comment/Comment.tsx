@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import styles from './comment.css';
 import {EColors, Text} from "../../../Text";
-import {CommentForm} from "../../CommentForm";
+// import {CommentForm} from "../../CommentFormContainer/CommentForm";
 import {IPost} from "../../../../hooks/usePostComments";
 import {ReactComponent as ReplyButtonSvg} from '../../../assets/replyButton.svg';
 import {CommentList} from "../CommentList";
+import {CommentFormContainer} from "../../CommentFormContainer";
 
 export function Comment({comment} : {comment: IPost}) {
   if (comment.count) {
@@ -24,7 +25,7 @@ export function Comment({comment} : {comment: IPost}) {
           <Text size={12} color={EColors.grey99}>Ответить</Text>
         </button>
         <div className={isCommentHide ? styles.hidden : ''}>
-          <CommentForm
+          <CommentFormContainer
               postId={comment.id}
               isCommentHide={isCommentHide}
               helloText={`to ${comment.author}: `}
