@@ -1,16 +1,23 @@
 import React from 'react';
 import styles from './title.css';
-// пока что содержимое оставляем просто константами
+import {Post} from "../../../../Post";
 
 interface ITitle {
     post: string;
     postUrl: string;
+    postId: string;
 }
 
-export function Title({ post, postUrl }: ITitle) {
+export function Title({ post, postId }: ITitle) {
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
   return (
       <h2 className={styles.title}>
-        <a href= {postUrl} className={styles.postLink}>{post}</a>
+          {/*href= {postUrl}*/}
+          <a className={styles.postLink} onClick={() => {setIsModalOpen(true)}}>
+            {post}
+        </a>
+
+          { isModalOpen && ( <Post postId={postId} onClose={() => { setIsModalOpen(false) }}/> )}
       </h2>
   );
 }

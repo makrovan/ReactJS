@@ -21,7 +21,8 @@ export interface ICardProps {
 }
 
 export function Card(props: ICardProps) {
-    const {title = 'title',
+    const {
+        title = 'title',
         postUrl = '#postUrl',
         previewImg = 'https://cdn.dribbble.com/users/1171505/screenshots/15253256/media/9195348e7da3886e8269918b952f0466.png',
         publishedTime,
@@ -29,14 +30,18 @@ export function Card(props: ICardProps) {
         karmaValue = 0,
         name = 'author name',
         photo = 'https://cdn.dribbble.com/users/230073/avatars/normal/ad60f3dd2d81f3d769fd6d098552b26f.jpg',
-        link = '#user-url'
+        link = '#user-url',
+        id
     } = props;
   return (
       <li className={styles.card}>
           < TextContent
-              publishedTime={publishedTime?.toLocaleDateString('ru-ru', {weekday: "short", year:"numeric", month:"short", day:"numeric"})}
+              publishedTime= {publishedTime?.toLocaleDateString(
+                  'ru-ru', {weekday: "short", year:"numeric", month:"short", day:"numeric"})}
               title={title}
-              postUrl={postUrl} >
+              postUrl={postUrl}
+              postId={id}
+          >
               <UserLink
                   link={photo}
                   name={name}

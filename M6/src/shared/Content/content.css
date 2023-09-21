@@ -1,6 +1,6 @@
 .content {
     /*для отображения меню убираем!!!*/
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 @media all and (min-width: 1024px) {
