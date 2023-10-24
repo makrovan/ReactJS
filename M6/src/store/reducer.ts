@@ -1,4 +1,4 @@
-import {ActionCreator, Reducer} from "redux";
+import {Action, ActionCreator, Reducer} from "redux";
 import {
     ME_REQUEST,
     ME_REQUEST_ERROR,
@@ -8,6 +8,7 @@ import {
     MeRequestSuccessAction
 } from "./me/actions";
 import {meReducer, MeState} from "./me/reducer";
+import {ThunkAction} from "redux-thunk";
 
 export type RootState = {
     token: string;
@@ -59,6 +60,18 @@ export const rootReducer: Reducer<RootState, MyAction> =
             return state;
     }
 }
+
+export const setTokenRequestAsync = ():ThunkAction<void, RootState, unknown, Action<string>> =>
+    (dispatch, _getState) => {
+        dispatch(setTokenStart());
+
+        const token = (localStorage.getItem('token') && localStorage.getItem('token') !== 'undefined') ?
+            localStorage.getItem('token') : window.__token__;
+        if (token && token !== 'undefined') {
+            dispatch(setToken(token));
+            localStorage.setItem('token', token);
+        }
+    }
 
 // const store = useStore<RootState>();
 // const reduxToken = store.getState().reduxToken;

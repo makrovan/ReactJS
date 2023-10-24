@@ -9,10 +9,10 @@ import {UserContextProvider} from "./shared/context/userContext";
 import {PostsContextProvider} from "./shared/context/postsContext";
 import { applyMiddleware, legacy_createStore, Middleware} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
-import {rootReducer} from "./store/reducer";
+import {rootReducer, setTokenRequestAsync} from "./store/reducer";
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
-import {setTokenRequestAsync} from "./store/me/actions";
+// import {setTokenRequestAsync} from "./store/me/actions";
 
 const logger: Middleware = (_store) => (next) => (action) => {
     console.log('dispatching:', action);
@@ -35,8 +35,7 @@ const store = legacy_createStore(rootReducer, composeWithDevTools(
 
 function AppComponent(){
     useEffect(() => {
-        // @ts-ignore
-        store.dispatch(setTokenRequestAsync());
+        store.dispatch(setTokenRequestAsync() as any);
         // store.dispatch(timeout(3000));
     }, []);
 
