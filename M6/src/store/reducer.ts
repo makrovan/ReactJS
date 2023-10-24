@@ -22,16 +22,24 @@ const initialState: RootState = {
     },
 }
 const SET_TOKEN = 'SET_TOKEN';
+const SET_TOKEN_START = 'SET_TOKEN_START';
 type SetTokenAction = {
     type: typeof SET_TOKEN;
     token: string;
+}
+type SetTokenStartAction = {
+    type: typeof SET_TOKEN_START;
 }
 export const setToken: ActionCreator<SetTokenAction> = (token: string) => ({
     type: SET_TOKEN,
     token,
 });
 
-type MyAction = SetTokenAction | MeRequestAction | MeRequestSuccessAction | MeRequestErrorAction;
+export const setTokenStart: ActionCreator<SetTokenStartAction> = () => ({
+    type: SET_TOKEN_START,
+});
+
+type MyAction = SetTokenAction | MeRequestAction | MeRequestSuccessAction | MeRequestErrorAction | SetTokenStartAction;
 export const rootReducer: Reducer<RootState, MyAction> =
     (state = initialState, action) => {
     switch (action.type) {

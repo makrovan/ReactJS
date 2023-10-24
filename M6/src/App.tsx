@@ -7,13 +7,14 @@ import {Content} from "./shared/Content";
 import {CardsList} from "./shared/CardsList";
 import {UserContextProvider} from "./shared/context/userContext";
 import {PostsContextProvider} from "./shared/context/postsContext";
-import {Action, applyMiddleware, legacy_createStore, Middleware} from "redux";
+import { applyMiddleware, legacy_createStore, Middleware} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
-import {rootReducer, RootState, setToken} from "./store/reducer";
+import {rootReducer} from "./store/reducer";
 import {Provider} from "react-redux";
-import thunk, {ThunkAction} from "redux-thunk";
+import thunk from "redux-thunk";
+import {setTokenRequestAsync} from "./store/me/actions";
 
-const logger: Middleware = (store) => (next) => (action) => {
+const logger: Middleware = (_store) => (next) => (action) => {
     console.log('dispatching:', action);
     next(action);
     // const nextValue = next({...action, name: 'Anton'});
@@ -24,28 +25,19 @@ const store = legacy_createStore(rootReducer, composeWithDevTools(
     applyMiddleware(logger, thunk),
 ));
 
-const timeout = (ms: number):ThunkAction<void, RootState, unknown, Action<string>> =>
-    (dispatch, _getState) => {
-    dispatch({ type: 'START'});
-    setTimeout(() => {
-        dispatch({type: 'FINISH'})
-    }, ms);
-}
+// const timeout = (ms: number):ThunkAction<void, RootState, unknown, Action<string>> =>
+//     (dispatch, _getState) => {
+//     dispatch({ type: 'START'});
+//     setTimeout(() => {
+//         dispatch({type: 'FINISH'})
+//     }, ms);
+// }
 
 function AppComponent(){
     useEffect(() => {
-        const token = ((localStorage.getItem('token')) && (localStorage.getItem('token') !== 'undefined')) ?
-            localStorage.getItem('token') : window.__token__;
-        // console.log(`localStorage: ${localStorage.getItem('token')}`);
-        // console.log(`@@@@@ ${token} @@@@@@@@@@@@@@@@@@@@@@@@@`);
-        // console.log(`@@@@@ ${localStorage.getItem('token')} @@@@@@@@@@@@@@@@@@@@@@@@@`);
-        // console.log(`@@@@@ ${window.__token__} @@@@@@@@@@@@@@@@@@@@@@@@@`);
-        store.dispatch(setToken(token));
         // @ts-ignore
-        store.dispatch(timeout(3000));
-        if(token) {
-            localStorage.setItem('token', token);
-        }
+        store.dispatch(setTokenRequestAsync());
+        // store.dispatch(timeout(3000));
     }, []);
 
     return (

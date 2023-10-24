@@ -1,6 +1,6 @@
 import {Action, ActionCreator} from "redux";
 import {ThunkAction} from "redux-thunk";
-import {RootState} from "../reducer";
+import {RootState, setToken, setTokenStart} from "../reducer";
 import axios from "axios/index";
 
 export const ME_REQUEST = 'ME_REQUEST';
@@ -36,7 +36,8 @@ export const meRequestError: ActionCreator<MeRequestErrorAction> = (error: strin
     error
 });
 
-export const meRequestAsync = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch, getState) => {
+export const meRequestAsync = (): ThunkAction<void, RootState, unknown, Action<string>> =>
+    (dispatch, getState) => {
     dispatch(meRequest());
     axios.get(
         'https://oauth.reddit.com/api/v1/me', {
@@ -51,3 +52,15 @@ export const meRequestAsync = (): ThunkAction<void, RootState, unknown, Action<s
             dispatch(meRequestError(String(error)));
         })
 }
+
+export const setTokenRequestAsync = ():ThunkAction<void, RootState, unknown, Action<string>> =>
+    (dispatch, _getState) => {
+        dispatch(setTokenStart());
+
+        const token = ((localStorage.getItem('token')) && (localStorage.getItem('token') !== 'undefined')) ?
+            localStorage.getItem('token') : window.__token__;
+        if (token) {
+            dispatch(setToken(token));
+            localStorage.setItem('token', token);
+        }
+    }
