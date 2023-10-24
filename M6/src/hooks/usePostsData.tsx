@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {IPostsData} from "../shared/context/postsContext";
 import {useSelector} from "react-redux";
-import {RootState} from "../store";
+import {RootState} from "../store/reducer";
 
 export function usePostsData(){
     const token = useSelector<RootState, string>(state => state.token);

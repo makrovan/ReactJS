@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './main.global.css'
 import {hot} from "react-hot-loader/root";
 import {Layout} from "./shared/Layout";
@@ -7,14 +7,46 @@ import {Content} from "./shared/Content";
 import {CardsList} from "./shared/CardsList";
 import {UserContextProvider} from "./shared/context/userContext";
 import {PostsContextProvider} from "./shared/context/postsContext";
-import {legacy_createStore} from "redux";
+import {Action, applyMiddleware, legacy_createStore, Middleware} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
-import {rootReducer} from "./store";
+import {rootReducer, RootState, setToken} from "./store/reducer";
 import {Provider} from "react-redux";
+import thunk, {ThunkAction} from "redux-thunk";
 
-const store = legacy_createStore(rootReducer, composeWithDevTools());
+const logger: Middleware = (store) => (next) => (action) => {
+    console.log('dispatching:', action);
+    next(action);
+    // const nextValue = next({...action, name: 'Anton'});
+    // console.log('action after next:', nextValue);
+}
+
+const store = legacy_createStore(rootReducer, composeWithDevTools(
+    applyMiddleware(logger, thunk),
+));
+
+const timeout = (ms: number):ThunkAction<void, RootState, unknown, Action<string>> =>
+    (dispatch, _getState) => {
+    dispatch({ type: 'START'});
+    setTimeout(() => {
+        dispatch({type: 'FINISH'})
+    }, ms);
+}
 
 function AppComponent(){
+    useEffect(() => {
+        const token = ((localStorage.getItem('token')) && (localStorage.getItem('token') !== 'undefined')) ?
+            localStorage.getItem('token') : window.__token__;
+        // console.log(`localStorage: ${localStorage.getItem('token')}`);
+        // console.log(`@@@@@ ${token} @@@@@@@@@@@@@@@@@@@@@@@@@`);
+        // console.log(`@@@@@ ${localStorage.getItem('token')} @@@@@@@@@@@@@@@@@@@@@@@@@`);
+        // console.log(`@@@@@ ${window.__token__} @@@@@@@@@@@@@@@@@@@@@@@@@`);
+        store.dispatch(setToken(token));
+        // @ts-ignore
+        store.dispatch(timeout(3000));
+        if(token) {
+            localStorage.setItem('token', token);
+        }
+    }, []);
 
     return (
         <Provider store={store}>
