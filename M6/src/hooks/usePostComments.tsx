@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios, {AxiosResponse} from "axios";
 import {useSelector} from "react-redux";
-import {RootState} from "../store";
+import {RootState} from "../store/reducer";
 
 export interface IPost {
     author?: string;

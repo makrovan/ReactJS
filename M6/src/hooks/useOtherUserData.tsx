@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useSelector} from "react-redux";
-import {RootState} from "../store";
+import {RootState} from "../store/reducer";
 
 
 interface IOtherUserData {
@@ -12,9 +12,9 @@ interface IOtherUserData {
 
 export function useOtherUserData(username: string) {
     const token = useSelector<RootState, string>(state => state.token);
-
     const [data, setData] = useState<IOtherUserData>({});
     useEffect(() => {
+        if ((token === 'undefined')||(!token)) return;
         axios.get(
             `https://oauth.reddit.com/user/${username}/about.json?redditWebClient=desktop2x&app=desktop2x-client-production&gilding_detail=1&awarded_detail=1&raw_json=1`, {
                 headers: {Authorization: `bearer ${token}`}
@@ -26,7 +26,9 @@ export function useOtherUserData(username: string) {
                     url: `https://www.reddit.com/user/${resp.data.data.name}`
                 });
             })
-            .catch()
+            .catch((error) => {
+                console.log(error);
+            })
     }, [token]);
     return [data];
 }

@@ -26,9 +26,6 @@ export function Post(props: IPostProps) {
     }
   }, []);
 
-  const node = document.querySelector('#modal_root');
-  if (!node) return null;
-
   const emptyPost = {
     id: ''
   }
@@ -48,7 +45,10 @@ export function Post(props: IPostProps) {
     }
   }, [postComments]);
 
-  return ReactDOM.createPortal((
+    const node = document.querySelector('#modal_root');
+    if (!node) return null;
+
+    return ReactDOM.createPortal((
       <div className={styles.modal} ref={ref}>
         <h2 className={styles.header}>{post.title}</h2>
         <div className={styles.content}>
