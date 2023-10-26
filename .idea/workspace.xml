@@ -2,7 +2,137 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f30e5680-ba1d-40c8-8d79-da030429a87d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/M6/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/M6/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/bin/dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/cfg/webpack.client.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/cfg/webpack.server.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/client/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/hooks/useOtherUserData.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/hooks/usePostComments.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/hooks/usePostsData.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/hooks/useUserData.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/main.global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/server/indexTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/server/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Break/Break.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Break/break.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Break/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/CommentButton/CommentButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/CommentButton/commentbutton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/CommentButton/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/Controls.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/KarmaCounter/KarmaCounter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/KarmaCounter/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/KarmaCounter/karmacounter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/SaveButton/SaveButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/SaveButton/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/SaveButton/savebutton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/ShareButton/ShareButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/ShareButton/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/ShareButton/sharebutton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/controls.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Controls/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Menu/Menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Menu/MenuItemsList/MenuItemsList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Menu/MenuItemsList/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Menu/MenuItemsList/menuitemslist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Menu/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Menu/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Preview/Preview.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Preview/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/Preview/preview.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/TextContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/Title/Title.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/Title/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/Title/title.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/UserLink/UserLink.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/UserLink/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/UserLink/userlink.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/TextContent/textcontent.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/Card/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/CardsList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/cardslist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/CardsList/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Content/Content.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Content/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Content/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Dropdown/Dropdown.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Dropdown/dropdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Dropdown/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/GenericList/GenericList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SearchBlock/SearchBlock.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SearchBlock/UserBlock/UserBlock.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SearchBlock/UserBlock/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SearchBlock/UserBlock/userblock.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SearchBlock/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SearchBlock/searchblock.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SortBlock/SortBlock.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SortBlock/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/SortBlock/sortblock.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/ThreadTitle/ThreadTitle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/ThreadTitle/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/ThreadTitle/threadtitle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Header/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Layout/Layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Layout/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Layout/layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentFormContainer/CommentForm/CommentForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentFormContainer/CommentForm/commentform.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentFormContainer/CommentForm/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentFormContainer/CommentFormContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentFormContainer/commentformcontainer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentFormContainer/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentList/Comment/Comment.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentList/Comment/comment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentList/Comment/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentList/CommentList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentList/commentlist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/CommentList/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/Post.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Post/post.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Text/Text.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Text/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/Text/text.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/abuseButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/anonimIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/commentButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/hideButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/menuButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/replyButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/saveButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/shareButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/assets/triangleButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/context/commentContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/context/postsContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/shared/context/userContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/store/me/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/store/me/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/store/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/types/global.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/types/svg.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/types/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/react/PickFromSyntheticEvent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/react/UseIsMounted.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/react/WithKey.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/react/generateRandomIndex.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/react/preventDefault.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/react/stopPropagation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/ts/assoc.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/ts/compose.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/ts/merge.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/src/utils/ts/noop.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M12/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,17 +158,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/anton/WebstormProjects/ReactJS&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/anton/WebstormProjects/ReactJS/M12",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/M12" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,6 +187,8 @@
       <workItem from="1693372150618" duration="209000" />
       <workItem from="1694147970603" duration="49000" />
       <workItem from="1694411159640" duration="47000" />
+      <workItem from="1698297917864" duration="28000" />
+      <workItem from="1698298958474" duration="95000" />
     </task>
     <servers />
   </component>
