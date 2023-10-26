@@ -15,7 +15,7 @@ export function Comment({comment} : {comment: IPost}) {
   const [isCommentHide, setIsCommentHide] = useState(true);
 
   return (
-      <li key={comment.id} className={styles.comment}>
+      <li className={styles.comment}>
         <h3 className={styles.author}>{comment.author} said:</h3>
         <p className={styles.body}>{comment.body}</p>
         <button className={styles.replyButton} onClick={() => {

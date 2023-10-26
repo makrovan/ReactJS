@@ -14,8 +14,8 @@ export function CommentList({children} : ICommentListProps) {
 
     return (
       <ul className={styles.commentList}>
-          {children.map((comment) => (
-              <Comment comment={comment} />
+          {children.map((comment, index) => (
+              <Comment comment={comment} key={'comment_'+ index}/>
           ))}
       </ul>
     );
