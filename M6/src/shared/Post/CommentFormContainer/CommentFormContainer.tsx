@@ -2,13 +2,13 @@ import React, {ChangeEvent, FormEvent, useEffect, useRef, useState} from 'react'
 import {CommentForm} from "./CommentForm";
 
 interface ICommentFormContainerProps {
-  // postId: string;
+  postId: string;
   isCommentHide: boolean;
   helloText: string;
   onClose?: () => void;
 }
 
-export function CommentFormContainer({ isCommentHide, helloText, onClose}: ICommentFormContainerProps) {
+export function CommentFormContainer({ postId, isCommentHide, helloText, onClose}: ICommentFormContainerProps) {
   const ref = useRef<HTMLTextAreaElement>(null);
   const [value, setValue] = useState(helloText)
 
