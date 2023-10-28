@@ -1,5 +1,6 @@
 import React, {ChangeEvent, FormEvent, useEffect, useRef, useState} from 'react';
 import {CommentForm} from "./CommentForm";
+import {CommentFormikForm} from "./CommentFormikForm";
 
 interface ICommentFormContainerProps {
   postId: string;
@@ -9,12 +10,12 @@ interface ICommentFormContainerProps {
 }
 
 export function CommentFormContainer({ postId, isCommentHide, helloText, onClose}: ICommentFormContainerProps) {
-  const ref = useRef<HTMLTextAreaElement>(null);
+  const myRef = useRef<HTMLTextAreaElement>(null);
   const [value, setValue] = useState(helloText)
 
   useEffect(() => {
-    ref.current?.focus();
-    ref.current?.setSelectionRange(ref.current?.value.length,ref.current?.value.length);
+    myRef.current?.focus();
+    myRef.current?.setSelectionRange(myRef.current?.value.length,myRef.current?.value.length);
   }, [isCommentHide]);
 
   function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
@@ -26,11 +27,16 @@ export function CommentFormContainer({ postId, isCommentHide, helloText, onClose
     onClose?.();
   }
 
+  function handleFormikSubmit(values: {commentText: string}): void {
+    console.log(values.commentText);
+  }
+
   return (
-      <CommentForm
-          value={value}
-          onChange={handleChange}
-          onSummit={handleSubmit}
-          myRef={ref} />
+      // <CommentForm
+      //     value={value}
+      //     onChange={handleChange}
+      //     onSummit={handleSubmit}
+      //     myRef={myRef} />
+      <CommentFormikForm onSummit={handleFormikSubmit}/>
   );
 }
