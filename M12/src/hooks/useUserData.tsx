@@ -9,7 +9,7 @@ export function useUserData() {
     const token = useSelector<RootState, string>(state => state.token);
     const dispatch = useDispatch();
     useEffect(() => {
-        // if ((token === 'undefined')||(!token)) return;
+        if ((token === 'undefined')||(!token)) return;
         dispatch(meRequestAsync());
     }, [token]);
 

@@ -24,12 +24,12 @@ export function Card(props: ICardProps) {
     const {
         title = 'title',
         postUrl = '#postUrl',
-        previewImg = 'https://cdn.dribbble.com/users/1171505/screenshots/15253256/media/9195348e7da3886e8269918b952f0466.png',
+        previewImg = '',
         publishedTime,
         commentNumber = 0,
         karmaValue = 0,
         name = 'author name',
-        photo = 'https://cdn.dribbble.com/users/230073/avatars/normal/ad60f3dd2d81f3d769fd6d098552b26f.jpg',
+        photo = '',
         link = '#user-url',
         id
     } = props;
@@ -49,7 +49,9 @@ export function Card(props: ICardProps) {
               />
           </TextContent>
           <Preview
-              previewImg={previewImg}/>
+              previewImg={(previewImg !== 'self' && previewImg !=='nsfw' && previewImg !== 'default' && previewImg !== 'spoiler') ? previewImg :
+                  'https://cdn.dribbble.com/users/1171505/screenshots/15253256/media/9195348e7da3886e8269918b952f0466.png'}/>
+          {/*заглушка, если нет картинки*/}
           <Menu />
           <Controls commentNumber={commentNumber} karmaValue={karmaValue}/>
       </li>

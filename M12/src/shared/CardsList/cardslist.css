@@ -1,3 +1,19 @@
+.button {
+    width: 220px;
+    height: 50px;
+    background: #CC6633;
+    border-radius: 0 0 3px 0;
+    align-self: flex-end;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    visibility: hidden;
+}
+
 @media all and (min-width: 1024px) {
     .cardsList {
         padding: 40px 0;
