@@ -18,7 +18,11 @@ export function CardsList() {
     const [nextAfter, setNextAfter] = useState('');
     const [countOfIntersecting, setCountOfIntersecting] = useState(0);
     const [endOfList, setEndOfList] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
     const bottomOfList = useRef<HTMLDivElement>(null);
 
     async function load() {
@@ -34,7 +38,7 @@ export function CardsList() {
                     }
                 });
 
-            console.log(after);
+            // console.log(after);
             setNextAfter(after);
             setPosts(prevChildren => prevChildren.concat(...children));
             // console.log('response', posts);
@@ -60,11 +64,11 @@ export function CardsList() {
         }
 
         const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && (countOfIntersecting < 3)) {
+            if (mounted&&entries[0].isIntersecting && (countOfIntersecting < 3)) {
                 setCountOfIntersecting(countOfIntersecting + 1);
-                console.log(countOfIntersecting);
+                // console.log(countOfIntersecting);
                 load();
-            } else if (entries[0].isIntersecting && (countOfIntersecting === 3)) {
+            } else if (mounted&&entries[0].isIntersecting && (countOfIntersecting === 3)) {
                 const myButton = document.getElementById('button');
                 if (myButton) {
                     myButton.style.visibility = 'visible';
@@ -84,7 +88,7 @@ export function CardsList() {
             }
         }
 
-    }, [bottomOfList.current, nextAfter, token]);
+    }, [bottomOfList.current, nextAfter, token, mounted]);
 
     function handleButtonClick() {
         console.log('clicked!!!');
