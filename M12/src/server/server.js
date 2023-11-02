@@ -8,10 +8,6 @@ import axios from "axios";
 const app = express();
 
 app.use("/static", express.static("./dist/client"));
-app.get("/", (req, res) => {
-  res.send(indexTemplate(ReactDOM.renderToString(App())));
-});
-
 // app.get("/auth", (req, res) => {
 //   // req.query.code;
 //   axios.post(
@@ -28,21 +24,25 @@ app.get("/", (req, res) => {
 //   );
 // });
 app.get("/auth", (req, res) => {
-  // req.query.code;
-  axios.post(
-      'https://www.reddit.com/api/v1/access_token',
-      `grant_type=authorization_code&code=${req.query.code}&redirect_uri=http://localhost:3000/auth`,
-      {
-        auth: {username: process.env.CLIENT_ID, password: 'TvVWqiWin1vh1tL9FB4PC9Ck1uZCgw'},
-        headers: {'Content-type': 'application/x-www-form-urlencoded'}
-      }
-  )
-      .then(({data}) => {
-          res.send(indexTemplate(ReactDOM.renderToString(App()),data['access_token']));
-      })
-      .catch(console.log);
+    // req.query.code;
+    axios.post(
+        'https://www.reddit.com/api/v1/access_token',
+        `grant_type=authorization_code&code=${req.query.code}&redirect_uri=http://localhost:3000/auth`,
+        {
+            auth: {username: process.env.CLIENT_ID, password: 'TvVWqiWin1vh1tL9FB4PC9Ck1uZCgw'},
+            headers: {'Content-type': 'application/x-www-form-urlencoded'}
+        }
+    )
+        .then(({data}) => {
+            res.send(indexTemplate(ReactDOM.renderToString(App()),data['access_token']));
+        })
+        .catch(console.log);
+});
+
+app.get("*", (req, res) => {
+    res.send(indexTemplate(ReactDOM.renderToString(App())));
 });
 
 app.listen(3000, () => {
-  console.log("server started on port http://localhost:3000");
+    console.log("server started on port http://localhost:3000");
 });
