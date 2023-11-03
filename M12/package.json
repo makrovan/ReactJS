@@ -17,6 +17,7 @@
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "cors": "^2.8.5",
+    "easy-peasy": "^5.0.1",
     "express": "^4.17.1",
     "formik": "^2.4.5",
     "nodemon": "^2.0.12",
