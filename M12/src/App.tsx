@@ -7,13 +7,15 @@ import {Content} from "./shared/Content";
 import {CardsList} from "./shared/CardsList";
 import {UserContextProvider} from "./shared/context/userContext";
 import {PostsContextProvider} from "./shared/context/postsContext";
-import { applyMiddleware, legacy_createStore} from "redux";
+import {applyMiddleware, legacy_createStore} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 import {rootReducer, setTokenRequestAsync} from "./store/reducer";
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import {BrowserRouter, Navigate, NavLink, Route, Routes, useParams} from "react-router-dom";
 import {Post} from "./shared/Post";
+import {createStore, StoreProvider} from "easy-peasy";
+import {storeModel, StoreModel} from "./store/easyPeasyStore";
 // import styles from "./shared/CardsList/Card/TextContent/Title/title.css";
 // import {setTokenRequestAsync} from "./store/me/actions";
 
@@ -36,6 +38,13 @@ const store = legacy_createStore(rootReducer, composeWithDevTools(
 //     }, ms);
 // }
 
+// interface StoreModel {
+//     item: string,
+//     add: Action<string>,
+// }
+
+const easy_peasyStore = createStore<StoreModel>(storeModel);
+
 function AppComponent(){
     const [mounted, setMounted] = useState(false);
 
@@ -56,42 +65,44 @@ function AppComponent(){
 
     return (
         <Provider store={store}>
-            {mounted &&
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Navigate to="/posts" />} />
-                        <Route path="/auth" element={<Navigate to="/posts" />} />
-                        <Route path="/posts" element = {
-                            <UserContextProvider>
-                                <Layout>
-                                    <Header />
-                                    <Content>
-                                        <PostsContextProvider>
-                                            <CardsList />
-                                        </PostsContextProvider>
-                                    </Content>
-                                </Layout>
-                            </UserContextProvider>} />
+            <StoreProvider store={easy_peasyStore}>
+                {mounted &&
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/" element={<Navigate to="/posts" />} />
+                            <Route path="/auth" element={<Navigate to="/posts" />} />
+                            <Route path="/posts" element = {
+                                <UserContextProvider>
+                                    <Layout>
+                                        <Header />
+                                        <Content>
+                                            <PostsContextProvider>
+                                                <CardsList />
+                                            </PostsContextProvider>
+                                        </Content>
+                                    </Layout>
+                                </UserContextProvider>} />
 
-                        <Route path="/posts/:id" element = {
-                            <UserContextProvider>
-                                <Layout>
-                                    <Header />
-                                    <Content>
-                                        <PostsContextProvider>
-                                            <CardsList />
-                                            <MyPost />
-                                        </PostsContextProvider>
-                                    </Content>
-                                </Layout>
-                            </UserContextProvider>} />
+                            <Route path="/posts/:id" element = {
+                                <UserContextProvider>
+                                    <Layout>
+                                        <Header />
+                                        <Content>
+                                            <PostsContextProvider>
+                                                <CardsList />
+                                                <MyPost />
+                                            </PostsContextProvider>
+                                        </Content>
+                                    </Layout>
+                                </UserContextProvider>} />
 
-                        <Route path="*" element = {
-                            <NavLink style={{textAlign: 'center'}} to="/">404 - страница не найдена...</NavLink>
-                        } />
-                    </Routes>
-                </BrowserRouter>
-            }
+                            <Route path="*" element = {
+                                <NavLink style={{textAlign: 'center'}} to="/">404 - страница не найдена...</NavLink>
+                            } />
+                        </Routes>
+                    </BrowserRouter>
+                }
+            </StoreProvider>
         </Provider>
     );
 }
