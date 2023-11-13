@@ -80,5 +80,6 @@ module.exports = {
   optimization: {
     minimize: false,
   },
-  plugins: [new DefinePlugin({'process.env.CLIENT_ID': `'${process.env.CLIENT_ID}'`})],
+  plugins: [new DefinePlugin({'process.env.CLIENT_ID': `'${process.env.CLIENT_ID}'`,
+    'process.env.SECRET': `'${process.env.SECRET}'`})],
 };

@@ -53,7 +53,7 @@ export function CardsList() {
         if (!token || token === 'undefined') return;
 
         if (nextAfter === null) {
-            console.log('end...');
+            // console.log('end...');
             const myButton = document.getElementById('button');
             if (myButton) {
                 myButton.style.visibility = 'hidden';
@@ -91,7 +91,7 @@ export function CardsList() {
     }, [bottomOfList.current, nextAfter, token, mounted]);
 
     function handleButtonClick() {
-        console.log('clicked!!!');
+        // console.log('clicked!!!');
         const myButton = document.getElementById('button');
         if (myButton) {
             myButton.style.visibility = 'hidden';

@@ -1,0 +1,13 @@
+.DS_Store
+.dockerignore
+Dockerfile
+.idea
+.gitkeep
+package.json
+webpack.config.js
+jest.config.js
+package-lock.json
+tsconfig.json
+/node_modules/
+/cfg/
+/bin/

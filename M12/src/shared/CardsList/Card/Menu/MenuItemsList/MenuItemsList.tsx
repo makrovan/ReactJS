@@ -47,7 +47,7 @@ function MenuList( { list } : IMenuListProps) {
 }
 
 const handleClick = (id: string) => {
-        console.log((id));
+        // console.log((id));
     }
 
 interface IMenuItemsListProps {

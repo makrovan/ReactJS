@@ -38,7 +38,7 @@ export function CommentFormContainer({ postId, isCommentHide, helloText, onClose
   // }
 
   function handleFormikSubmit(values: {commentText: string}): void {
-    console.log(values.commentText);
+    // console.log(values.commentText);
   }
 
   return (
