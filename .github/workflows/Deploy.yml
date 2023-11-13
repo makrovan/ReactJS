@@ -2,6 +2,7 @@ name: Deploy My App In DockerHub
 on:
   push:
     branches: [ main ]
+    paths-ignore: ['./github/workflows/*']
   pull_request:
     branches: [ main ]
   workflow_dispatch:
