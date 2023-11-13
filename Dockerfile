@@ -13,6 +13,6 @@ RUN npm i express@4.17.1 &&  \
     npm i easy-peasy@5.0.1 && \
     npm i compression@1.7.4 && \
     npm i helmet@7.0.0
-COPY M12 /home/react-app
+COPY . /home/react-app
 EXPOSE 3000
 CMD node dist/server/server.js
