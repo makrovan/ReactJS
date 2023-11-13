@@ -1,5 +1,5 @@
 name: Deploy My App In DockerHub
-on: push
+on: workflow_dispatch
 jobs:
   runs-on: ubuntu-latest
   steps:
